@@ -26,7 +26,7 @@ jobs:
       run: dotnet pack --configuration Release
 
     - name: Publish
-      run: dotnet nuget push "MoneyExtension/bin/Release/*.nupkg" -k ${{ secrets.TOKEN }} -s https://api.nuget.org/v3/index.json
+      run: nuget.exe push "MoneyExtension/bin/Release/*.nupkg" -ApiKey ${{ secrets.TOKEN }} -Source https://api.nuget.org/v3/index.json
 
 
 
